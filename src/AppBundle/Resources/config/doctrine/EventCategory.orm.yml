@@ -1,0 +1,19 @@
+## YAML Template.
+---
+AppBundle\Entity\EventCategory:
+    type: entity
+    repositoryClass: AppBundle\Repository\EventCategoryRepository
+    table: event_categories
+    id:
+        id:
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: false
+        color:
+            type: string
+            length: 255
+            nullable: false

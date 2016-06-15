@@ -1,0 +1,33 @@
+## YAML Template.
+---
+AppBundle\Entity\Event:
+    type: entity
+    repositoryClass: AppBundle\Repository\EventRepository
+    table: events
+    id:
+        id:
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+            nullable: false
+        description:
+            type: text
+        start:
+            type: datetime
+            nullable: false
+        end:
+            type: datetime
+            nullable: false
+    manyToOne:
+        category:
+            targetEntity: AppBundle\Entity\EventCategory
+            cascade: ["persist", "remove"]
+            joinTable:
+                name: event_categories
+                joinColumns:
+                    category_id:
+                        referencedColumnName: id
+            nullable: true

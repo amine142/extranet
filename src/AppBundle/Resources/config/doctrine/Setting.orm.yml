@@ -1,0 +1,19 @@
+## YAML Template.
+---
+AppBundle\Entity\Setting:
+    type: entity
+    repositoryClass: AppBundle\Repository\SettingRepository
+    table: calendar_settings
+    id:
+        id:
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: false
+        value:
+            type: string
+            length: 255
+            nullable: false
